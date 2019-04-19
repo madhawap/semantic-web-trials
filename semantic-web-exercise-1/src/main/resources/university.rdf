@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://university.owl#"
+     xml:base="http://university.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:university="http://university.owl#">
+    <owl:Ontology rdf:about="http://university.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://university.owl#lectures -->
+
+    <owl:ObjectProperty rdf:about="http://university.owl#lectures">
+        <rdfs:domain rdf:resource="http://university.owl#Lecturer"/>
+        <rdfs:range rdf:resource="http://university.owl#Module"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://university.owl#studies -->
+
+    <owl:ObjectProperty rdf:about="http://university.owl#studies">
+        <rdfs:domain rdf:resource="http://university.owl#Student"/>
+        <rdfs:range rdf:resource="http://university.owl#Module"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://university.owl#fName -->
+
+    <owl:DatatypeProperty rdf:about="http://university.owl#fName">
+        <rdfs:domain rdf:resource="http://university.owl#People"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://university.owl#lName -->
+
+    <owl:DatatypeProperty rdf:about="http://university.owl#lName">
+        <rdfs:domain rdf:resource="http://university.owl#People"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://university.owl#module -->
+
+    <owl:DatatypeProperty rdf:about="http://university.owl#module">
+        <rdfs:domain rdf:resource="http://university.owl#Module"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://university.owl#module_Id -->
+
+    <owl:DatatypeProperty rdf:about="http://university.owl#module_Id">
+        <rdfs:domain rdf:resource="http://university.owl#Module"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://university.owl#staff_id -->
+
+    <owl:DatatypeProperty rdf:about="http://university.owl#staff_id">
+        <rdfs:domain rdf:resource="http://university.owl#Lecturer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://university.owl#student_id -->
+
+    <owl:DatatypeProperty rdf:about="http://university.owl#student_id">
+        <rdfs:domain rdf:resource="http://university.owl#Student"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://university.owl#CS -->
+
+    <owl:Class rdf:about="http://university.owl#CS">
+        <rdfs:subClassOf rdf:resource="http://university.owl#Module"/>
+        <owl:disjointWith rdf:resource="http://university.owl#Maths"/>
+    </owl:Class>
+    
+
+
+    <!-- http://university.owl#Lecturer -->
+
+    <owl:Class rdf:about="http://university.owl#Lecturer">
+        <rdfs:subClassOf rdf:resource="http://university.owl#People"/>
+        <owl:disjointWith rdf:resource="http://university.owl#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://university.owl#Maths -->
+
+    <owl:Class rdf:about="http://university.owl#Maths">
+        <rdfs:subClassOf rdf:resource="http://university.owl#Module"/>
+    </owl:Class>
+    
+
+
+    <!-- http://university.owl#Module -->
+
+    <owl:Class rdf:about="http://university.owl#Module"/>
+    
+
+
+    <!-- http://university.owl#People -->
+
+    <owl:Class rdf:about="http://university.owl#People"/>
+    
+
+
+    <!-- http://university.owl#Student -->
+
+    <owl:Class rdf:about="http://university.owl#Student">
+        <rdfs:subClassOf rdf:resource="http://university.owl#People"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://university.owl#CS1 -->
+
+    <owl:NamedIndividual rdf:about="http://university.owl#CS1">
+        <rdf:type rdf:resource="http://university.owl#CS"/>
+        <module rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Semantic Web</module>
+        <module_Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS001</module_Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://university.owl#CS2 -->
+
+    <owl:NamedIndividual rdf:about="http://university.owl#CS2">
+        <rdf:type rdf:resource="http://university.owl#CS"/>
+        <module rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Augmented Reality</module>
+        <module_Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CS002</module_Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://university.owl#Lect1 -->
+
+    <owl:NamedIndividual rdf:about="http://university.owl#Lect1">
+        <rdf:type rdf:resource="http://university.owl#Lecturer"/>
+        <lectures rdf:resource="http://university.owl#CS1"/>
+        <lectures rdf:resource="http://university.owl#CS2"/>
+        <fName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prof. Tim</fName>
+        <lName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Berners Lee</lName>
+        <staff_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lec001</staff_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://university.owl#Lect2 -->
+
+    <owl:NamedIndividual rdf:about="http://university.owl#Lect2">
+        <rdf:type rdf:resource="http://university.owl#Lecturer"/>
+        <lectures rdf:resource="http://university.owl#CS2"/>
+        <fName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prof. Mark</fName>
+        <lName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Billinghurst</lName>
+        <staff_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lec002</staff_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://university.owl#Maths1 -->
+
+    <owl:NamedIndividual rdf:about="http://university.owl#Maths1">
+        <rdf:type rdf:resource="http://university.owl#Maths"/>
+        <module rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Probability</module>
+        <module_Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maths001</module_Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://university.owl#Maths2 -->
+
+    <owl:NamedIndividual rdf:about="http://university.owl#Maths2">
+        <rdf:type rdf:resource="http://university.owl#Maths"/>
+        <module rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Statistics</module>
+        <module_Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maths002</module_Id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://university.owl#Stu1 -->
+
+    <owl:NamedIndividual rdf:about="http://university.owl#Stu1">
+        <rdf:type rdf:resource="http://university.owl#Student"/>
+        <studies rdf:resource="http://university.owl#Maths1"/>
+        <studies rdf:resource="http://university.owl#Maths2"/>
+        <fName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Madhawa</fName>
+        <lName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Perera</lName>
+        <student_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stu001</student_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://university.owl#Stu2 -->
+
+    <owl:NamedIndividual rdf:about="http://university.owl#Stu2">
+        <rdf:type rdf:resource="http://university.owl#Student"/>
+        <studies rdf:resource="http://university.owl#CS1"/>
+        <studies rdf:resource="http://university.owl#CS2"/>
+        <fName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James</fName>
+        <lName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peter</lName>
+        <student_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stu002</student_id>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.7.2018-12-02T02:23:35Z) https://github.com/owlcs/owlapi -->
+
