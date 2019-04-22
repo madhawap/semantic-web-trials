@@ -4,6 +4,7 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.vocabulary.RDF;
+import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -16,10 +17,10 @@ public class MqttSubscriber {
         String topic = "MetaData";
         String broker = "tcp://localhost:1883";
         String clientId = "M002";
-        //MemoryPersistence persistence = new MemoryPersistence();
+        MemoryPersistence persistence = new MemoryPersistence();
 
         try {
-            MqttClient sampleClient = new MqttClient(broker, clientId);
+            MqttClient sampleClient = new MqttClient(broker, clientId, persistence);
             MqttConnectOptions connOpts = new MqttConnectOptions();
             connOpts.setCleanSession(true);
             sampleClient.connect(connOpts);
